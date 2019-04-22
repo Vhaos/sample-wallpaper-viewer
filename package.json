@@ -1,0 +1,35 @@
+{
+  "name": "sample-wallpaper-viewer",
+  "version": "1.0.0",
+  "description": "A sample wallpaper viewer that pulls a random wallpaper worthy picture and displays that using the Unsplash API",
+  "main": "app.js",
+  "author": "Vhaos <kareemdaggash@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vhaos/sample-wallpaper-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vhaos/sample-wallpaper-viewer/issues"
+  },
+  "homepage": "https://github.com/Vhaos/sample-wallpaper-viewer#readme",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/app.js",
+    "build": "babel src --out-dir ./dist --source-maps",
+    "serve": "node ./dist/index.js",
+    "test": "./node_modules/.bin/mocha --compilers js:@babel/register",
+    "debug": "node --inspect-brk ./dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11"
+  }
+}
