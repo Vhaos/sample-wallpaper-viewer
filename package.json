@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A sample wallpaper viewer that pulls a random wallpaper worthy picture and displays that using the Unsplash API",
   "main": "app.js",
-  "author": "Vhaos <kareemdaggash@gmail.com>",
+  "author": "Kareem Daggash <kareemdaggash@gmail.com>",
   "license": "MIT",
   "private": true,
   "repository": {
