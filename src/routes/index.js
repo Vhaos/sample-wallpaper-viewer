@@ -35,7 +35,7 @@ router.get('/random', (request, response) => {
  */
 router.get('/photo/:Id', (request, response) => {
   try {
-    let url = '/photos/'+ request.params.Id;
+    let url = '/photos/' + request.params.Id;
     UnSplash.get(url)
       .then((res) => {
         response.send(res.data)
@@ -53,7 +53,7 @@ router.get('/photo/:Id', (request, response) => {
  */
 router.get('/:id/statistics', (request, response) => {
   try {
-    UnSplash.get('/photos/'+request.params.id+'/statistics')
+    UnSplash.get('/photos/' + request.params.id + '/statistics')
       .then((res) => {
         response.send(res.data)
       }, (error) => {
@@ -66,10 +66,24 @@ router.get('/:id/statistics', (request, response) => {
 });
 
 /**
- * Get a single page of photo results for a query.
+ * Gets a page of photo results that match a query.
  */
 router.get('/search', (request, response) => {
- //...
+  try {
+    UnSplash.get('/search/photos', {
+        params: {
+          query: request.query.query
+        }
+      })
+      .then((res) => {
+        response.send(res.data)
+      }, (error) => {
+        response.send(error)
+      })
+  } catch (error) {
+    console.log('caught error ' + error)
+    response.send(error)
+  }
 });
 
 router.get('*', (request, response) => {
