@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //include routes and enable cross origin
 app.use(cors());
-app.use('/api/v1',router);
+app.use(router);
 
 //listen on port 5000
 const PORT = 5000;
